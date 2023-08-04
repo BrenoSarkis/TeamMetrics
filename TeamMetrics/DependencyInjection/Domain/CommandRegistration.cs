@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using TeamMetrics.Common;
 using TeamMetrics.Domain.Application;
-using TeamMetrics.Domain.Application.Commands;
+using TeamMetrics.Domain.Application.CommandHandlers;
 using TeamMetrics.Domain.Boundaries.Commands;
 
 namespace TeamMetrics.Api.DependencyInjection.Domain;

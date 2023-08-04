@@ -1,7 +1,9 @@
 ﻿using System.Security.Claims;
 using TeamMetrics.Common;
 using TeamMetrics.Domain.Application;
+using TeamMetrics.Domain.Application.QueryHandlers;
 using TeamMetrics.Domain.Boundaries;
+using TeamMetrics.Domain.Boundaries.Queries;
 
 namespace TeamMetrics.Api.DependencyInjection.Domain;
 
@@ -17,7 +19,7 @@ public static class QueryRegistration {
     }
 
     private static IEnumerable<Type> QueryHandlers() {
-        var handleres = typeof(GetTeams).Assembly.GetTypes()
+        var handleres = typeof(GetTeamsHandler).Assembly.GetTypes()
             .Where(x => x.GetInterfaces().Any(IsAQueryHandler))
             .Where(x => !x.IsAbstract)
             .ToArray();

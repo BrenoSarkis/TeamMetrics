@@ -2,6 +2,7 @@
 using TeamMetrics.Common;
 using TeamMetrics.Domain.Application;
 using TeamMetrics.Domain.Boundaries;
+using TeamMetrics.Domain.Boundaries.Commands;
 
 namespace TeamMetrics.Api.Controllers;
 

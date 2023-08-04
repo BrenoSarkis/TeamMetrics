@@ -1,5 +1,6 @@
 ﻿using TeamMetrics.Common;
 using TeamMetrics.Domain.Boundaries.Commands;
+using TeamMetrics.Domain.Boundaries.Queries;
 
 namespace TeamMetrics.Domain.Boundaries;
 
@@ -31,13 +32,13 @@ public class Messenger {
         var resultType = typeof(Result);
         var handlerType = tipo.MakeGenericType(queryType, resultType);
 
-        dynamic handler = serviceLocator.GetService(handlerType);
+        dynamic handler = serviceLocator.GetService(handlerType) ;
 
         if (handler == null) {
             throw new InvalidOperationException($@"Could not find a handler for query ""{queryType.Name}"".");
         }
 
-        dynamic result = await handler.Handle((dynamic)query);
+        var result = await handler.Handle((dynamic)query);
         return result;
     }
 }
