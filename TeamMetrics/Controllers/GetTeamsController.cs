@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TeamMetrics.Common;
+using TeamMetrics.Domain.Application;
 using TeamMetrics.Domain.Boundaries;
 using TeamMetrics.Domain.Boundaries.Queries;
 using static TeamMetrics.Api.Mappers.Mapper;
@@ -10,9 +11,9 @@ namespace TeamMetrics.Api.Controllers;
 [ApiController]
 [Route("api/teams")]
 public class GetTeamsController : TeamMetricsController {
-    private readonly Messenger messenger;
+    private readonly IMessenger messenger;
 
-    public GetTeamsController(Messenger messenger) {
+    public GetTeamsController(IMessenger messenger) {
         messenger.ThrowIfNull();
 
         this.messenger = messenger;

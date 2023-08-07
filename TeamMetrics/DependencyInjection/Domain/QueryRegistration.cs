@@ -1,6 +1,4 @@
-﻿using System.Security.Claims;
-using TeamMetrics.Common;
-using TeamMetrics.Domain.Application;
+﻿using TeamMetrics.Common;
 using TeamMetrics.Domain.Application.QueryHandlers;
 using TeamMetrics.Domain.Boundaries;
 using TeamMetrics.Domain.Boundaries.Queries;

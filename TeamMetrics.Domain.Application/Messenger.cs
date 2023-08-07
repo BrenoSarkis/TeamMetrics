@@ -1,10 +1,11 @@
 ﻿using TeamMetrics.Common;
+using TeamMetrics.Domain.Boundaries;
 using TeamMetrics.Domain.Boundaries.Commands;
 using TeamMetrics.Domain.Boundaries.Queries;
 
-namespace TeamMetrics.Domain.Boundaries;
+namespace TeamMetrics.Domain.Application;
 
-public class Messenger {
+public class Messenger : IMessenger {
     private readonly IServiceProvider serviceLocator;
 
     public Messenger(IServiceProvider serviceLocator) {
@@ -32,7 +33,7 @@ public class Messenger {
         var resultType = typeof(Result);
         var handlerType = tipo.MakeGenericType(queryType, resultType);
 
-        dynamic handler = serviceLocator.GetService(handlerType) ;
+        dynamic handler = serviceLocator.GetService(handlerType);
 
         if (handler == null) {
             throw new InvalidOperationException($@"Could not find a handler for query ""{queryType.Name}"".");

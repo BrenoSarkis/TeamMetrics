@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamMetrics.Api", "TeamMetrics\TeamMetrics.Api.csproj", "{05C0E87F-0C40-4DCA-89F5-B98FAAC6C2A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamMetrics.Api", "TeamMetrics\TeamMetrics.Api.csproj", "{05C0E87F-0C40-4DCA-89F5-B98FAAC6C2A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamMetrics.Domain.Application", "TeamMetrics.Domain.Application\TeamMetrics.Domain.Application.csproj", "{300A8E63-2D33-4557-A195-0359C6EE433F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamMetrics.Domain.Application", "TeamMetrics.Domain.Application\TeamMetrics.Domain.Application.csproj", "{300A8E63-2D33-4557-A195-0359C6EE433F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamMetrics.Domain.Interceptors", "TeamMetrics.Domain.Interceptors\TeamMetrics.Domain.Interceptors.csproj", "{1BD0B602-EAE9-48C4-839F-DAB60E34BC96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamMetrics.Domain.Interceptors", "TeamMetrics.Domain.Interceptors\TeamMetrics.Domain.Interceptors.csproj", "{1BD0B602-EAE9-48C4-839F-DAB60E34BC96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamMetrics.Domain.Boundaries", "TeamMetrics.Domain.Boundaries\TeamMetrics.Domain.Boundaries.csproj", "{BC41966F-6A07-437F-8C91-EED11FD7BF88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamMetrics.Domain.Boundaries", "TeamMetrics.Domain.Boundaries\TeamMetrics.Domain.Boundaries.csproj", "{BC41966F-6A07-437F-8C91-EED11FD7BF88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamMetrics.Common", "TeamMetrics.Common\TeamMetrics.Common.csproj", "{4644FD70-E193-4E69-8A47-B378E6CEF502}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamMetrics.Common", "TeamMetrics.Common\TeamMetrics.Common.csproj", "{4644FD70-E193-4E69-8A47-B378E6CEF502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamMetrics.Domain", "TeamMetrics.Domain\TeamMetrics.Domain.csproj", "{BF190D3B-F156-4D0F-BA25-B7816F735D29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamMetrics.Domain", "TeamMetrics.Domain\TeamMetrics.Domain.csproj", "{BF190D3B-F156-4D0F-BA25-B7816F735D29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamMetrics.Tests", "TeamMetrics.Tests\TeamMetrics.Tests.csproj", "{8F6C6515-7CBF-4598-A015-4F9811DC0EDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{BF190D3B-F156-4D0F-BA25-B7816F735D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF190D3B-F156-4D0F-BA25-B7816F735D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF190D3B-F156-4D0F-BA25-B7816F735D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F6C6515-7CBF-4598-A015-4F9811DC0EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6C6515-7CBF-4598-A015-4F9811DC0EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6C6515-7CBF-4598-A015-4F9811DC0EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6C6515-7CBF-4598-A015-4F9811DC0EDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
