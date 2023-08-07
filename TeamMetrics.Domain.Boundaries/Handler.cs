@@ -1,4 +1,6 @@
-﻿namespace TeamMetrics.Domain.Boundaries;
+﻿using TeamMetrics.Common.Domain;
+
+namespace TeamMetrics.Domain.Boundaries;
 
 public interface Handler<in TMessage> where TMessage : Message {
     Task Handle(TMessage command);

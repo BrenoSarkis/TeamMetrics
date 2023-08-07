@@ -1,7 +1,6 @@
 ﻿using System.Linq.Expressions;
-using TeamMetrics.Common;
 
-namespace TeamMetrics.Domain.Boundaries;
+namespace TeamMetrics.Common.Specifications;
 
 public abstract class Specification<T> where T : class {
     public static readonly Specification<T> identification = new SpecificationIdentification<T>();

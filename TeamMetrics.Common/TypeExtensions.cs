@@ -53,15 +53,37 @@ public static class TypeExtensions {
     public static TAttribute Attribute<TAttribute>(this Object @this) where TAttribute : Attribute {
         @this.ThrowIfNull();
 
-        var tipo = @this.GetType();
-        var attribute = Attribute<TAttribute>((Object) tipo);
+        var type = @this.GetType();
+        var attribute = type.Attribute<TAttribute>();
         return attribute;
     }
 
-    public static Attribute Attribute<TAttribute>(this Type @this) where TAttribute : Attribute {
+    public static TAttribute Attribute<TAttribute>(this Type @this) where TAttribute : Attribute {
         @this.ThrowIfNull();
 
-        return (Attribute)@this.GetCustomAttributes(typeof(Attribute), inherit: true).FirstOrDefault()!;
+        var attribute = (TAttribute)@this.GetCustomAttributes(typeof(TAttribute), inherit: true).FirstOrDefault();
+        return attribute;
+    }
+
+    public static IEnumerable<TAttribute> Attributes<TAttribute>(this Type @this) where TAttribute : Attribute {
+        @this.ThrowIfNull();
+
+        var attributes = (TAttribute[])@this.GetCustomAttributes(typeof(TAttribute), inherit: true);
+        return attributes;
+    }
+
+    public static TAttribute Attribute<TAttribute>(this PropertyInfo @this) where TAttribute : Attribute {
+        @this.ThrowIfNull();
+
+        var attribute = (TAttribute)@this.GetCustomAttributes(typeof(TAttribute), inherit: true).FirstOrDefault();
+        return attribute;
+    }
+
+    public static IEnumerable<TAttribute> Attributes<TAttribute>(this PropertyInfo @this) where TAttribute : Attribute {
+        @this.ThrowIfNull();
+
+        var attributes = (TAttribute[])@this.GetCustomAttributes(typeof(TAttribute), inherit: true);
+        return attributes;
     }
 
     public static IEnumerable<Type> FielsOfType<Type>(this System.Type @this) {

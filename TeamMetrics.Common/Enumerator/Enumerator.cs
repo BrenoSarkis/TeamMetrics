@@ -174,10 +174,10 @@ public abstract class Enumerator<TEnum> : IEnumerator, IEquatable<Enumerator<TEn
 }
 
 public class EnumeratorNotFound : BusinessError {
-    public EnumeratorNotFound(String message = "Enumerator not found.", Exception originalException = null) : base(message, originalException) {
+    public EnumeratorNotFound(String message = "Enumerator not found.", Exception originalErrorException = null) : base(message, originalErrorException) {
     }
 
-    public EnumeratorNotFound(Type type, String value, Exception erroOriginal = null) : base(ErrorMessage(type, value), erroOriginal) {
+    public EnumeratorNotFound(Type type, String value, Exception erroOriginalError = null) : base(ErrorMessage(type, value), erroOriginalError) {
     }
 
     private static String ErrorMessage(Type type, String value) {
@@ -191,10 +191,10 @@ public class EnumeratorNotFound : BusinessError {
 }
 
 public class EnumeratorNotFoundWithName : EnumeratorNotFound {
-    public EnumeratorNotFoundWithName(String message = "Enumerator não encontrado com o name informado.", Exception originalException = null) : base(message, originalException) {
+    public EnumeratorNotFoundWithName(String message = "Enumerator não encontrado com o name informado.", Exception originalErrorException = null) : base(message, originalErrorException) {
     }
 
-    public EnumeratorNotFoundWithName(Type type, String name, Exception originalException = null) : base(ErrorMessage(type, name), originalException) {
+    public EnumeratorNotFoundWithName(Type type, String name, Exception originalErrorException = null) : base(ErrorMessage(type, name), originalErrorException) {
     }
 
     private static String ErrorMessage(Type type, String value) {
@@ -208,10 +208,10 @@ public class EnumeratorNotFoundWithName : EnumeratorNotFound {
 }
 
 public class EnumeratorNotFoundWithId : EnumeratorNotFound {
-    public EnumeratorNotFoundWithId(String message = "Enumerator não encontrado com o código informado.", Exception originalException = null) : base(message, originalException) {
+    public EnumeratorNotFoundWithId(String message = "Enumerator não encontrado com o código informado.", Exception originalErrorException = null) : base(message, originalErrorException) {
     }
 
-    public EnumeratorNotFoundWithId(Type type, String id, Exception originalException = null) : base(ErrorMessage(type, id), originalException) {
+    public EnumeratorNotFoundWithId(Type type, String id, Exception originalErrorException = null) : base(ErrorMessage(type, id), originalErrorException) {
     }
 
     private static String ErrorMessage(Type type, String id) {

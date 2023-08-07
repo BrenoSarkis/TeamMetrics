@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
+using TeamMetrics.Common.Domain;
 
-namespace TeamMetrics.Domain.Boundaries;
+namespace TeamMetrics.Common.Specifications;
 
 public interface Repository<T> where T : Aggregate {
     Task Add(T entidade);
@@ -10,5 +11,5 @@ public interface Repository<T> where T : Aggregate {
     Task<ImmutableList<T>> Filter(params Specification<T>[] filter);
     Task<T> Find(params Specification<T>[] filter);
     Task<Boolean> Exists(params Specification<T>[] filter);
-    Task<long> Count(params Specification<T>[] filter);
+    Task<long> CountRecords(params Specification<T>[] filter);
 }

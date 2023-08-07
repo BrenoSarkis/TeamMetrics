@@ -1,6 +1,8 @@
-﻿namespace TeamMetrics.Domain;
+﻿using TeamMetrics.Common.Domain;
 
-public class Team {
+namespace TeamMetrics.Domain;
+
+public class Team : Aggregate {
     public Guid Id { get; set; }
 
     public Team(Guid id) {

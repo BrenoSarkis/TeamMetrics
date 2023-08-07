@@ -1,4 +1,5 @@
 ﻿using TeamMetrics.Common;
+using TeamMetrics.Common.Specifications;
 using TeamMetrics.Domain.Application;
 using TeamMetrics.Domain.Boundaries;
 

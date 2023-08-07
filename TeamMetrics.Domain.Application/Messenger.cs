@@ -16,9 +16,9 @@ public class Messenger : IMessenger {
     public async Task Send(Command command) {
         var tipo = typeof(CommandHandler<>);
         var commandType = command.GetType();
-        var handlertype = tipo.MakeGenericType(commandType);
+        var handlerType = tipo.MakeGenericType(commandType);
 
-        dynamic handler = serviceLocator.GetService(handlertype);
+        dynamic handler = serviceLocator.GetService(handlerType);
 
         if (handler == null) {
             throw new InvalidOperationException($@"Could not find a handler for command ""{commandType.Name}"".");

@@ -1,4 +1,6 @@
-﻿using TeamMetrics.Domain.Boundaries;
+﻿using TeamMetrics.Domain;
+using TeamMetrics.Domain.Application.QueryHandlers;
+using TeamMetrics.Domain.Boundaries;
 using TeamMetrics.Domain.Boundaries.Commands;
 using TeamMetrics.Domain.Boundaries.Queries;
 
@@ -18,3 +20,14 @@ public class FakeMessenger : IMessenger {
         return await Task.FromResult(default(Result));
     }
 }
+
+public class FakeServiceProvider : IServiceProvider {
+    public Object? GetService(Type serviceType) {
+        if (serviceType == typeof(Query<IEnumerable<Team>>)) {
+            return new GetTeamsHandler();
+        }
+
+        return null;
+    }
+}
+
