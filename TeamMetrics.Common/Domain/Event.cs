@@ -1,6 +1,6 @@
 ﻿namespace TeamMetrics.Common.Domain;
 
-public interface Evento : Message {
+public interface Event : Message {
     EventMetadata Metadata { get; set; }
 }
 

@@ -216,7 +216,7 @@ public class EnumeratorNotFoundWithId : EnumeratorNotFound {
 
     private static String ErrorMessage(Type type, String id) {
         if (type.HasAttribute<DescriptionAttribute>()) {
-            var name = TypeExtensions.Attribute<DescriptionAttribute>((Object) type).Description;
+            var name = ((Object) type).Attribute<DescriptionAttribute>().Description;
             return $@"""{id}"" is not a valid id for {name}.";
         }
 
@@ -258,7 +258,7 @@ public readonly struct ThenDo<TEnum> where TEnum : IEnumerator {
         this.stopEvaluating = stopEvaluating;
     }
 
-    public IfItIsAnEnumerator<TEnum> Entao(Action facaIsso) {
+    public IfItIsAnEnumerator<TEnum> Then(Action facaIsso) {
         if (!stopEvaluating && isMatch) {
             facaIsso();
         }
@@ -268,9 +268,9 @@ public readonly struct ThenDo<TEnum> where TEnum : IEnumerator {
 }
 
 public static class ExtensoesDeEnumerator {
-    public static ThenDo<TEnum> SeFor<TEnum>(this Enumerator<TEnum> @this, Enumerator<TEnum> enumerator) where TEnum : Enumerator<TEnum> => new(@this is not null && @this.Equals(enumerator), false, @this);
+    public static ThenDo<TEnum> IfItIs<TEnum>(this Enumerator<TEnum> @this, Enumerator<TEnum> enumerator) where TEnum : Enumerator<TEnum> => new(@this is not null && @this.Equals(enumerator), false, @this);
 
-    public static ThenDo<TEnum> SeFor<TEnum>(this Enumerator<TEnum> @this, params Enumerator<TEnum>[] enumeratores) where TEnum : Enumerator<TEnum> => new(enumeratores.Contains(@this), false, @this);
+    public static ThenDo<TEnum> IfItIs<TEnum>(this Enumerator<TEnum> @this, params Enumerator<TEnum>[] enumeratores) where TEnum : Enumerator<TEnum> => new(enumeratores.Contains(@this), false, @this);
 
-    public static ThenDo<TEnum> SeFor<TEnum>(this Enumerator<TEnum> @this, IEnumerable<Enumerator<TEnum>> enumeratores) where TEnum : Enumerator<TEnum> => new(enumeratores is not null && enumeratores.Contains(@this), false, @this);
+    public static ThenDo<TEnum> IfItIs<TEnum>(this Enumerator<TEnum> @this, IEnumerable<Enumerator<TEnum>> enumeratores) where TEnum : Enumerator<TEnum> => new(enumeratores is not null && enumeratores.Contains(@this), false, @this);
 }

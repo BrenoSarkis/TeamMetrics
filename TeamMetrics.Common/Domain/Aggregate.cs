@@ -3,19 +3,19 @@
 namespace TeamMetrics.Common.Domain;
 
 public class Aggregate : Entity {
-    private readonly List<Evento> eventos = new();
+    private readonly List<Event> events = new();
 
-    public virtual IReadOnlyCollection<Evento> Eventos => eventos.ToImmutableList();
+    public virtual IReadOnlyCollection<Event> Events => events.ToImmutableList();
 
-    protected virtual void AdicionarEventos(params Evento[] eventos) {
-        eventos.ForEach(AdicionarEvento);
+    protected virtual void AddEvents(params Event[] events) {
+        this.events.ForEach(AddEvent);
     }
 
-    protected virtual void AdicionarEvento(Evento evento) {
-        eventos.Add(evento);
+    protected virtual void AddEvent(Event @event) {
+        events.Add(@event);
     }
 
-    public virtual void LimparEventos() {
-        eventos.Clear();
+    public virtual void ClearEvents() {
+        events.Clear();
     }
 }
